@@ -1,4 +1,4 @@
-package de.moritz.terminalgame.player;
+package de.moritz.terminalgames.player;
 
 public class Player {
 

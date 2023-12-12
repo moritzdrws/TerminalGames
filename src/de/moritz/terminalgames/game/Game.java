@@ -1,4 +1,4 @@
-package de.moritz.terminalgame.game;
+package de.moritz.terminalgames.game;
 
 public interface Game {
 

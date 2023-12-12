@@ -1,7 +1,7 @@
-package de.moritz.terminalgame;
+package de.moritz.terminalgames;
 
-import de.moritz.terminalgame.game.GameManager;
-import de.moritz.terminalgame.game.QuadConnect;
+import de.moritz.terminalgames.game.GameManager;
+import de.moritz.terminalgames.game.QuadConnect;
 
 public class Main {
 

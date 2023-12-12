@@ -1,6 +1,6 @@
-package de.moritz.terminalgame.game;
+package de.moritz.terminalgames.game;
 
-import de.moritz.terminalgame.Main;
+import de.moritz.terminalgames.Main;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -24,6 +24,15 @@ public class PlayerManager {
         return player;
     }
 
+    public Player removePlayer(String name) {
+        Player player = this.getPlayer(name);
+
+        this.players.remove(player);
+        this.playerMap.remove(player.getName());
+
+        return player;
+    }
+
     public Player getPlayerExact(String name) {
         return this.playerMap.get(name);
     }
@@ -51,4 +60,38 @@ public class PlayerManager {
         }
         return found;
     }
+
+    public List<Player> getPlayers() {
+        return this.players;
+    }
+
+    public boolean existsPlayer(String name) {
+        if (this.playerMap.containsKey(name))
+            return true;
+
+        boolean exists = false;
+
+        for (Player player : this.players) {
+            if (!player.getName().equalsIgnoreCase(name))
+                continue;
+            exists = true;
+            break;
+        }
+
+        return exists;
+    }
+
+    public boolean existsIcon(char icon) {
+        boolean exists = false;
+
+        for (Player player : this.players) {
+            if (player.getIcon() != icon)
+                continue;
+            exists = true;
+            break;
+        }
+
+        return exists;
+    }
+
 }

@@ -27,6 +27,29 @@ public class GameManager {
         System.out.println(Main.PREFIX + game.getName() + " wurde erfolgreich geladen.");
     }
 
+    public Game startGame(Game game) {
+        if (this.currentGame != null) {
+            this.stopGame(this.currentGame);
+        }
+        this.currentGame = game;
+        game.start();
+
+        System.out.println(game.getGamePrefix() + "Spiel wurde gestartet.");
+        return game;
+    }
+
+    public Game stopGame(Game game) {
+        if (this.currentGame != game) {
+            return game;
+        }
+        System.out.println(game.getGamePrefix() + "Spiel wurde gestoppt.");
+        this.currentGame = null;
+        return game;
+    }
+
+    public Game getCurrentGame() {
+        return this.currentGame;
+    }
 
     public Game getGame(String name) {
         return this.gameMap.get(name);
@@ -41,6 +64,6 @@ public class GameManager {
     }
 
     public void handle(String message) {
-
+        this.currentGame.handle(message);
     }
 }

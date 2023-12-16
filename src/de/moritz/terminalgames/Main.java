@@ -2,6 +2,7 @@ package de.moritz.terminalgames;
 
 import de.moritz.terminalgames.command.CommandManager;
 import de.moritz.terminalgames.command.ExitCommand;
+import de.moritz.terminalgames.command.PlayerCommand;
 import de.moritz.terminalgames.game.GameManager;
 import de.moritz.terminalgames.game.QuadConnect;
 import de.moritz.terminalgames.player.PlayerManager;
@@ -19,12 +20,12 @@ public class Main {
 
         Main.commandManager = new CommandManager();
         Main.commandManager.registerCommand(new ExitCommand());
-
+        Main.commandManager.registerCommand(new PlayerCommand());
+        
         Main.gameManager = new GameManager();
         Main.gameManager.registerGame(new QuadConnect());
 
         Main.playerManager = new PlayerManager();
-
 
         Main.commandManager.read();
     }

@@ -1,14 +1,12 @@
 package de.moritz.terminalgames.game;
 
-public class QuadConnect implements Game {
+public class QuadConnect extends Game {
 
-    private final String name;
-    private boolean running;
     private int width;
     private int height;
 
     public QuadConnect() {
-        this.name = "QuadConnect";
+        super("QuadConnect");
 
         this.width = 20;
         this.height = 10;
@@ -19,25 +17,6 @@ public class QuadConnect implements Game {
         this.height = height;
     }
 
-    @Override
-    public boolean running() {
-        return this.running;
-    }
-
-    @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public void start() {
-        this.running = true;
-    }
-
-    @Override
-    public void stop() {
-        this.running = false;
-    }
 
     @Override
     public void render() {

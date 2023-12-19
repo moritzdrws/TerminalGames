@@ -1,20 +1,37 @@
 package de.moritz.terminalgames.game;
 
-public interface Game {
+public abstract class Game {
 
-    boolean running();
+    private final String name;
+    private boolean running;
 
-    String getName();
 
-    void start();
+    public Game(String name) {
+        this.name = name;
+        this.running = false;
+    }
 
-    void stop();
+    abstract void render();
 
-    void render();
+    public String getName() {
+        return this.name;
+    }
 
-    void handle(String message);
+    public boolean running() {
+        return this.running;
+    }
 
-    default String getGamePrefix() {
+    public void start() {
+        this.running = true;
+    }
+
+    public void stop() {
+        this.running = false;
+    }
+
+    abstract void handle(String message);
+
+    public final String getGamePrefix() {
         return "[" + this.getName() + "] ";
     }
 }
